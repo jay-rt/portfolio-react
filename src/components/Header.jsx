@@ -1,14 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Header = () => {
+  const [isMenuToggle, setMenuToggle] = useState(false);
+
+  const handleMenuToggle = () => {
+    setMenuToggle(!isMenuToggle);
+  };
+
   return (
-    //HEADER
     <header className="header" id="header">
       <nav className="nav container">
         <a href="/" className="nav__logo">
           JayRt
         </a>
-        <div className="nav__menu" id="nav-menu">
+        <div
+          className={"nav__menu" + (isMenuToggle ? " show-menu" : "")}
+          id="nav-menu"
+        >
           <ul className="nav__list grid">
             <li className="nav__item">
               <a href="#home" className="nav__link">
@@ -41,14 +49,22 @@ const Header = () => {
               </a>
             </li>
           </ul>
-          <i className="uil uil-times nav__close" id="nav-close"></i>
+          <i
+            className="uil uil-times nav__close"
+            id="nav-close"
+            onClick={handleMenuToggle}
+          ></i>
         </div>
 
         <div className="nav__btns">
           {/*Theme change button*/}
           <i className="uil uil-moon change-theme" id="theme-button"></i>
 
-          <div className="nav__toggle" id="nav-toggle">
+          <div
+            className="nav__toggle"
+            id="nav-toggle"
+            onClick={handleMenuToggle}
+          >
             <i className="uil uil-apps"></i>
           </div>
         </div>
