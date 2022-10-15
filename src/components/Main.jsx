@@ -1,7 +1,8 @@
 import React from "react";
-import Home from "./Home";
+import Home from "./Home/Home";
 import About from "./About";
-import Skills from "./Skills";
+import Skills from "./Skills/Skills";
+import Qualification from "./Qualification/Qualification";
 
 const Main = () => {
   return (
@@ -9,6 +10,7 @@ const Main = () => {
       <Home />
       <About />
       <Skills />
+      <Qualification />
     </main>
   );
 };

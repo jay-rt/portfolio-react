@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import SkillData from "./SkillData";
 
 const Skills = () => {
   const initialState = { div1: false, div2: false };
@@ -39,30 +40,10 @@ const Skills = () => {
           </div>
 
           <div className="skills__list grid">
-            <div className="skills__data">
-              <div className="skills__titles">
-                <h3 className="skills__name">HTML</h3>
-                <span className="skills__level">Advanced</span>
-              </div>
-            </div>
-            <div className="skills__data">
-              <div className="skills__titles">
-                <h3 className="skills__name">CSS</h3>
-                <span className="skills__level">Intermediate</span>
-              </div>
-            </div>
-            <div className="skills__data">
-              <div className="skills__titles">
-                <h3 className="skills__name">Javascript</h3>
-                <span className="skills__level">Intermediate</span>
-              </div>
-            </div>
-            <div className="skills__data">
-              <div className="skills__titles">
-                <h3 className="skills__name">React</h3>
-                <span className="skills__level">Beginner</span>
-              </div>
-            </div>
+            <SkillData name="HTML" level="Advanced" />
+            <SkillData name="CSS" level="Intermediate" />
+            <SkillData name="JavaScript" level="Intermediate" />
+            <SkillData name="React" level="Beginner" />
           </div>
         </div>
 
@@ -88,12 +69,7 @@ const Skills = () => {
           </div>
 
           <div className="skills__list grid">
-            <div className="skills__data">
-              <div className="skills__titles">
-                <h3 className="skills__name">Node Js</h3>
-                <span className="skills__level">Intermediate</span>
-              </div>
-            </div>
+            <SkillData name="Node.js" level="Intermediate" />
           </div>
         </div>
       </div>

@@ -1,5 +1,5 @@
 import React from "react";
-import myImg from "../assets/img/perfil.png";
+import myImg from "../../assets/img/perfil.png";
 
 const HomeBlob = () => {
   return (

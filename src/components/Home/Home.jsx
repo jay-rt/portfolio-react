@@ -1,4 +1,5 @@
 import React from "react";
+import HomeSocial from "./HomeSocial";
 import HomeBlob from "./HomeBlob";
 
 const Home = () => {
@@ -7,30 +8,18 @@ const Home = () => {
       <div className="home__container container grid">
         <div className="home__content grid">
           <div className="home__social">
-            <a
-              href="https://linkedin.com"
-              target="_blank"
-              rel="noreferrer"
-              className="home__social-icon"
-            >
-              <i className="uil uil-linkedin-alt"></i>
-            </a>
-            <a
-              href="https://github.com"
-              target="_blank"
-              rel="noreferrer"
-              className="home__social-icon"
-            >
-              <i className="uil uil-github-alt"></i>
-            </a>
-            <a
-              href="https://twitter.com"
-              target="_blank"
-              rel="noreferrer"
-              className="home__social-icon"
-            >
-              <i className="uil uil-twitter-alt"></i>
-            </a>
+            <HomeSocial
+              link="https://linkedin.com"
+              icon=<i className="uil uil-linkedin-alt"></i>
+            />
+            <HomeSocial
+              link="https://github.com"
+              icon=<i className="uil uil-github-alt"></i>
+            />
+            <HomeSocial
+              link="https://twitter.com"
+              icon=<i className="uil uil-twitter-alt"></i>
+            />
           </div>
 
           <div className="home__img">
