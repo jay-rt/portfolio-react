@@ -3,6 +3,7 @@ import Home from "./Home/Home";
 import About from "./About";
 import Skills from "./Skills/Skills";
 import Qualification from "./Qualification/Qualification";
+import Services from "./Services/Services";
 
 const Main = () => {
   return (
@@ -11,6 +12,7 @@ const Main = () => {
       <About />
       <Skills />
       <Qualification />
+      <Services />
     </main>
   );
 };

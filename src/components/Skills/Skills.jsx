@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import SkillData from "./SkillData";
 
 const Skills = () => {
-  const initialState = { div1: false, div2: false };
+  const initialState = { frontend: false, backend: false };
   const [isSkillActive, setSkillActive] = useState(initialState);
   const handleSkill = (event) => {
-    //closest look for elements and traverses towards parent untill it finds the specified selector
+    //closest look for elements and traverses towards parent until it finds the specified selector
     const name = event.target.closest(".skills__header").dataset.name;
     setSkillActive((prevValue) => {
       return { ...initialState, [name]: !prevValue[name] };
@@ -21,12 +21,12 @@ const Skills = () => {
         {/** Skills 1 */}
         <div
           className={
-            "skills__content" + (isSkillActive.div1 ? " skills__open" : "")
+            "skills__content" + (isSkillActive.frontend ? " skills__open" : "")
           }
         >
           <div
             className="skills__header"
-            data-name="div1"
+            data-name="frontend"
             onClick={handleSkill}
           >
             <i className="uil uil-brackets-curly skills__icon"></i>
@@ -50,12 +50,12 @@ const Skills = () => {
         {/** Skills 2 */}
         <div
           className={
-            "skills__content" + (isSkillActive.div2 ? " skills__open" : "")
+            "skills__content" + (isSkillActive.backend ? " skills__open" : "")
           }
         >
           <div
             className="skills__header"
-            data-name="div2"
+            data-name="backend"
             onClick={handleSkill}
           >
             <i className="uil uil-server-network skills__icon"></i>

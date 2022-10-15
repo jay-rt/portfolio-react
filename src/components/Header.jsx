@@ -4,7 +4,7 @@ const Header = () => {
   const [isMenuToggle, setMenuToggle] = useState(false);
 
   const handleMenuToggle = () => {
-    setMenuToggle(!isMenuToggle);
+    setMenuToggle((prevValue) => !prevValue);
   };
 
   return (
