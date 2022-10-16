@@ -4,6 +4,7 @@ import About from "./About";
 import Skills from "./Skills/Skills";
 import Qualification from "./Qualification/Qualification";
 import Services from "./Services/Services";
+import Portfolio from "./Portfolio/Portfolio";
 
 const Main = () => {
   return (
@@ -13,6 +14,7 @@ const Main = () => {
       <Skills />
       <Qualification />
       <Services />
+      <Portfolio />
     </main>
   );
 };
