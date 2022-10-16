@@ -24,7 +24,7 @@ const Portfolio = () => {
           nextEl: nextRef.current,
           prevEl: prevRef.current,
         }}
-        pagination={true}
+        pagination={{ clickable: true }}
         modules={[Navigation, Pagination]}
         className="portfolio__container container"
       >

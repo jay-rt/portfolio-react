@@ -5,6 +5,8 @@ import Skills from "./Skills/Skills";
 import Qualification from "./Qualification/Qualification";
 import Services from "./Services/Services";
 import Portfolio from "./Portfolio/Portfolio";
+import Project from "./Project";
+import Testimonial from "./Testimonial/Testimonial";
 
 const Main = () => {
   return (
@@ -15,6 +17,8 @@ const Main = () => {
       <Qualification />
       <Services />
       <Portfolio />
+      <Project />
+      <Testimonial />
     </main>
   );
 };
