@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import SkillData from "./SkillData";
 
-const Skills = () => {
+const Skills = (props) => {
   const initialState = { frontend: false, backend: false };
   const [isSkillActive, setSkillActive] = useState(initialState);
   const handleSkill = (event) => {
@@ -13,7 +13,7 @@ const Skills = () => {
   };
 
   return (
-    <section className="skills section" id="skills">
+    <section className="skills section" id="skills" ref={props.reference}>
       <h2 className="section__title">Skills</h2>
       <span className="section__subtitle">My expertise</span>
 

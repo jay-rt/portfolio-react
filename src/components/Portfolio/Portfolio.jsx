@@ -9,24 +9,26 @@ import portfolio3 from "../../assets/img/portfolio3.jpg";
 
 //Import Swiper styles
 
-const Portfolio = () => {
+const Portfolio = (props) => {
   const prevRef = useRef(null);
   const nextRef = useRef(null);
   return (
-    <section className="portfolio section" id="portfolio">
+    <section className="portfolio section" id="portfolio" ref={props.reference}>
       <h2 className="section__title">Portfolio</h2>
       <span className="section__subtitle">Most recent work</span>
 
       <Swiper
         cssMode={true}
         loop={true}
-        navigation={{
-          nextEl: nextRef.current,
-          prevEl: prevRef.current,
-        }}
         pagination={{ clickable: true }}
         modules={[Navigation, Pagination]}
         className="portfolio__container container"
+        onInit={(swiper) => {
+          swiper.params.navigation.prevEl = prevRef.current;
+          swiper.params.navigation.nextEl = nextRef.current;
+          swiper.navigation.init();
+          swiper.navigation.update();
+        }}
       >
         <SwiperSlide className="portfolio__content grid">
           <PortfolioImage source={portfolio1} />

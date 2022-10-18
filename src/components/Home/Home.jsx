@@ -2,9 +2,9 @@ import React from "react";
 import HomeSocial from "./HomeSocial";
 import HomeBlob from "./HomeBlob";
 
-const Home = () => {
+const Home = (props) => {
   return (
-    <section className="home section" id="home">
+    <section className="home section" id="home" ref={props.reference}>
       <div className="home__container container grid">
         <div className="home__content grid">
           <div className="home__social">

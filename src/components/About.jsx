@@ -1,9 +1,9 @@
 import React from "react";
 import about from "../assets/img/about.jpg";
 
-const About = () => {
+const About = (props) => {
   return (
-    <section className="about section" id="about">
+    <section className="about section" id="about" ref={props.reference}>
       <h2 className="section__title">About Me</h2>
       <span className="section__subtitle">My introduction</span>
       <div className="about__container container grid">

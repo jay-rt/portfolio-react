@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import ViewMore from "./ViewMore";
 import ServicesModal from "./ServicesModal";
 
-const Services = () => {
+const Services = (props) => {
   const initialState = { ui: false, frontend: false };
   const [isModalOpen, setModalOpen] = useState(initialState);
   const handleOpen = (event) => {
@@ -13,7 +13,7 @@ const Services = () => {
     setModalOpen({ initialState });
   };
   return (
-    <section className="services section" id="services">
+    <section className="services section" id="services" ref={props.reference}>
       <h2 className="section__title">Services</h2>
       <span className="section__subtitle">What I can offer</span>
 
