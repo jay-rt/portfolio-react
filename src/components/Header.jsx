@@ -3,10 +3,14 @@ import React, { useEffect, useState } from "react";
 const Header = (props) => {
   const [menuToggle, setMenuToggle] = useState(false);
   const [header, setHeader] = useState(false);
-  // const [activeSection, setActiveSection] = useState("home");
+  const [darkMode, setDarkMode] = useState(false);
 
   const handleMenuToggle = () => {
     setMenuToggle((prevValue) => !prevValue);
+  };
+
+  const toggleTheme = () => {
+    setDarkMode((prevValue) => !prevValue);
   };
 
   useEffect(() => {
@@ -27,10 +31,25 @@ const Header = (props) => {
     };
   }, [header]);
 
+  //When loading the page check whether dark mode was activated previously or not
+  useEffect(() => {
+    const isDarkModeOn = localStorage.getItem("dark-mode");
+    if (isDarkModeOn === "true") {
+      setDarkMode(true);
+      console.log("dark mode");
+    }
+  }, []);
+
+  //Toggle dark mode on and off and save it to local storage
+  useEffect(() => {
+    document.body.classList.toggle("dark-theme", darkMode);
+    localStorage.setItem("dark-mode", darkMode);
+  }, [darkMode]);
+
   return (
     <header className={"header" + (header ? " scroll-header" : "")} id="header">
       <nav className="nav container">
-        <a href="/" className="nav__logo">
+        <a href="#home" className="nav__logo">
           JayRt
         </a>
         <div
@@ -118,7 +137,13 @@ const Header = (props) => {
 
         <div className="nav__btns">
           {/*Theme change button*/}
-          <i className="uil uil-moon change-theme" id="theme-button"></i>
+          <i
+            className={
+              "uil change-theme " + (darkMode ? "uil-sun" : "uil-moon")
+            }
+            id="theme-button"
+            onClick={toggleTheme}
+          ></i>
 
           <div
             className="nav__toggle"
